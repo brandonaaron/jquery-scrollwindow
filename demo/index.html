@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Demo of Scroll Window</title>
+		<!-- load latest build of jquery.js -->
+    <script type="text/javascript" src="../../../jquery/src/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../../jquery/src/selector/selector.js"></script>
+    <script type="text/javascript" src="../../../jquery/src/event/event.js"></script>
+    <script type="text/javascript" src="../../../jquery/src/ajax/ajax.js"></script>
+    <script type="text/javascript" src="../../../jquery/src/fx/fx.js"></script>
+		<!-- load the dimensions plugins -->
+		<script type="text/javascript" src="../../dimensions/jquery.dimensions.js" charset="utf-8"></script>
+		<!-- load the mousewheel plugins -->
+		<script type="text/javascript" src="../../mousewheel/mousewheel.js" charset="utf-8"></script>
+		<!-- load the plugin -->
+		<script type="text/javascript" src="../scrollWindow.js" charset="utf-8"></script>
+		<!-- load firebug lite 
+		<script type="text/javascript" src="../../../../firebuglite/firebug.js"></script>-->
+		
+		<script type="text/javascript" charset="utf-8">
+			var sw = null;
+			$(function() {
+				$('#userAgent').html(navigator.userAgent);
+				
+				sw  = $('#scrollWindow1').scrollWindow();
+				sw2 = $('#scrollWindow2').scrollWindow();
+			});
+		</script>
+		
+		<link rel="Stylesheet" media="screen" href="../../../jquery/test/data/testsuite.css" />
+		
+		<style type="text/css" media="screen">
+			#scrollWindow1 { margin: 20px; padding: 0 10px; width: 220px; height: 120px; background: #ccc; overflow: auto; }
+			
+			.swWindow { position: relative; margin: 20px; width: 220px; height: 120px; background: #ccc; overflow: hidden; }
+			.swArrowUp,
+			.swArrowDown { position: absolute; right: 0; width: 15px; height: 15px; background: #333; }
+			.swArrowUp { top: 0; }
+			.swArrowDown { bottom: 0; }
+			.swTrack { position: absolute; top: 15px; right: 0; width: 15px; height: 90px; background: #999; }
+			.swSlider { position: absolute; top: 0; right: 0; width: 15px; background: #666; }
+			.swContent { position: relative; top: 0px; padding: 0 15px 13px; width: 175px; } /* padding bottom should always be at least 13px */
+			
+			.swArrowDown-over,
+			.swArrowUp-over { background: #090; }
+			.swArrowDown-active,
+			.swArrowUp-active { background: #099; }
+			
+			.swSlider-over { background: #090; }
+			.swSlider-active { background: #099; }
+		</style>
+		
+	</head>
+	<body>
+		<h1 id="banner">jQuery scrollWindow.js - Demo</h1>
+		<h2 id="userAgent"></h2>
+		
+		<div id="scrollWindow1">
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			<p>END</p>
+		</div>
+		
+		<div id="scrollWindow2">
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			<p>END</p>
+		</div>
+			
+		
+		<!--<div class="scrollWindow">
+			<div class="scrollWindowContent">
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque lectus. Aliquam erat volutpat. Phasellus et odio. Curabitur tincidunt volutpat mauris. Aenean malesuada, nibh at mattis tempor, orci pede elementum metus, in venenatis augue magna non justo. Duis leo velit, luctus eget, ullamcorper at, eleifend a, justo. Nulla pretium felis sed dolor. Vivamus blandit augue in metus. Fusce sit amet enim. Nunc dui.</p>
+			</div>
+			<div class="scrollWindowArrowUp"></div>
+			<div class="scrollWindowArrowDown"></div>
+			<div class="scrollWindowSlider">
+				<div class="scrollWindowSliderTop"></div>
+				<div class="scrollWindowSliderMiddle"></div>
+				<div class="scrollWindowSliderBottom"></div>
+			</div>
+			<div class="scrollWindowTrack">
+		</div>-->
+		
+		
+	</body>
+</html>
